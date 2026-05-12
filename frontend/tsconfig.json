@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                         // Good for modern JS features
+    "module": "ESNext",                         // Suitable for ESM-based bundlers like Vite
+    "moduleResolution": "Node",                // Required for node module imports
+    "jsx": "react-jsx",                         // Uses new JSX transform (React 17+)
+    "strict": true,                             // Enables all strict type checks
+    "allowSyntheticDefaultImports": true,       // Allows default imports from modules without default export
+    "esModuleInterop": true,                    // Improves compatibility with CommonJS modules
+    "skipLibCheck": true,                       // Skips type checks on `node_modules` (speeds up build)
+    "forceConsistentCasingInFileNames": true,   // Prevents filename case mismatches across OSs
+
+    // ✅ RECOMMENDED ADDITIONS:
+    "baseUrl": ".",                             // Allows absolute imports like "@/components/..."
+    "paths": {
+      "@/*": ["src/*"]                          // Match alias like @/components to src/components
+    },
+    "isolatedModules": true,                    // Required by Vite and for type-checking single files
+    "resolveJsonModule": true,                  // Allows importing `.json` files
+    "noFallthroughCasesInSwitch": true,         // Prevents unintentional fallthrough in switch statements
+    "noImplicitReturns": true                   // Warns when not all code paths return a value
+  },
+  "include": ["src"],                           // Ensures TS only checks source files
+  "exclude": ["node_modules", "dist"]           // Skips build and dependency folders
+}
